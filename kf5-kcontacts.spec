@@ -1,14 +1,14 @@
-%define		kdeframever	5.87
+%define		kdeframever	5.88
 %define		qtver		5.15.0
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf5-%{kfname}
-Version:	5.87.0
+Version:	5.88.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	92de2dc0502b4bf3cee85136e8a1d169
+# Source0-md5:	adef8424bb598909a181a35e354a6180
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
