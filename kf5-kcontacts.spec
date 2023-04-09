@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.104
+%define		kdeframever	5.105
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf5-%{kfname}
-Version:	5.104.0
-Release:	2
+Version:	5.105.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	a816869c1e5a961a80e0c6d9df053319
+# Source0-md5:	9e25a2c8fef0d774fc505472569a2748
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
