@@ -1,21 +1,21 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.114
+%define		kdeframever	5.249.0
 %define		qtver		5.15.2
 %define		kfname		kcontacts
 Summary:	kcontacts
 Name:		kf5-%{kfname}
-Version:	5.114.0
-Release:	1
+Version:	5.249.0
+Release:	0.1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	8f54cd31d30d7f213b96ea58cab82d84
+Source0:	https://download.kde.org/unstable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	f3eb19451afba9f2217cd26f03d0d6e6
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel
-BuildRequires:	Qt5Test-devel >= %{qtver}
+BuildRequires:	Qt6Core-devel >= %{qtver}
+BuildRequires:	Qt6Gui-devel
+BuildRequires:	Qt6Test-devel >= %{qtver}
 BuildRequires:	cmake >= 3.16
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
@@ -24,7 +24,7 @@ BuildRequires:	kf5-kconfig-devel >= %{version}
 BuildRequires:	kf5-kcoreaddons-devel >= %{version}
 BuildRequires:	kf5-ki18n-devel >= %{version}
 BuildRequires:	ninja
-BuildRequires:	qt5-build >= %{qtver}
+BuildRequires:	qt6-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -80,15 +80,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%{_datadir}/qlogging-categories5/kcontacts.categories
-%{_datadir}/qlogging-categories5/kcontacts.renamecategories
-%ghost %{_libdir}/libKF5Contacts.so.5
-%{_libdir}/libKF5Contacts.so.5.*.*
+%{_datadir}/qlogging-categories6/kcontacts.categories
+%{_datadir}/qlogging-categories6/kcontacts.renamecategories
+%ghost %{_libdir}/libKF6Contacts.so.6
+%attr(755,root,root) %{_libdir}/libKF6Contacts.so.5.*.*
 #%%{_datadir}/kf5/kcontacts
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KF5/KContacts
-%{_libdir}/cmake/KF5Contacts
-%{_libdir}/libKF5Contacts.so
-%{_libdir}/qt5/mkspecs/modules/qt_KContacts.pri
+%{_includedir}/KF6/KContacts
+%{_libdir}/cmake/KF6Contacts
+%{_libdir}/libKF6Contacts.so
